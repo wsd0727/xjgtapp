@@ -1,0 +1,298 @@
+/* 基础的公共样式 */
+[v-cloak] {
+	display: none;
+}
+
+.banner-wrap image {
+	width: 750upx;
+	height: 400upx;
+}
+
+.card-wrapper {
+	width: 650upx;
+	padding: 30upx;
+	background-color: #fff;
+	border-radius: 20upx;
+	box-shadow: 0px 0px 6px #AAAAAA;
+	position: relative;
+	top: -80upx;
+	left: 25upx;
+}
+
+.date-wrap {
+	justify-content: space-between;
+}
+
+.card-row {
+	border-bottom: 1px solid #eee;
+	padding: 4px 0;
+}
+
+.card-row:active {
+	background: #EDEDED;
+}
+
+.card-row-lable {
+	width: 30%;
+	text-align: justify;
+	display: inline-block;
+	/* background-color: #09BB07; */
+}
+
+.card-row-input {
+	width: 70%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.button-wrapper {
+	margin: 10px 0;
+}
+
+/* 字体颜色 */
+
+/*主要颜色*/
+.c-primary,
+.c-primary a,
+a.c-primary {
+	color: #5a98de
+}
+
+.c-primary a:hover,
+a.c-primary:hover {
+	color: #5a98de
+}
+
+/*次主色*/
+.c-secondary,
+.c-secondary a,
+a.c-secondary {
+	color: #555
+}
+
+.c-secondary a:hover,
+a.c-secondary:hover {
+	color: #555
+}
+
+/*强调色—成功*/
+.c-success,
+.c-success a,
+a.c-success {
+	color: #5eb95e
+}
+
+.c-success a:hover,
+a.c-success:hover {
+	color: #5eb95e
+}
+
+/*强调色—危险*/
+.c-danger,
+.c-danger a,
+a.c-danger {
+	color: #dd514c
+}
+
+.c-danger a:hover,
+a.c-danger:hover {
+	color: #dd514c
+}
+
+/*强调色—警告*/
+.c-warning,
+.c-warning a,
+a.c-warning {
+	color: #f37b1d
+}
+
+.c-warning a:hover,
+a.c-warning:hover {
+	color: #f37b1d
+}
+
+/*强调色—错误*/
+.c-error,
+.c-error a,
+a.c-error {
+	color: #c00 !important
+}
+
+.c-error a:hover,
+a.c-error:hover {
+	color: #c00
+}
+
+/*辅助色—浅黑*/
+.c-333,
+.c-333 a,
+a.c-333 {
+	color: #333
+}
+
+.c-333 a:hover,
+a.c-333:hover {
+	color: #333
+}
+
+/*辅助色—灰色*/
+.c-666,
+.c-666 a,
+a.c-666 {
+	color: #666
+}
+
+.c-666 a:hover,
+a.c-666:hover {
+	color: #666
+}
+
+.c-999,
+.c-999 a,
+a.c-999 {
+	color: #999
+}
+
+.c-999 a:hover,
+a.c-999:hover {
+	color: #999
+}
+
+/*标准色—红色*/
+.c-red,
+.c-red a,
+a.c-red {
+	color: red
+}
+
+.c-red a:hover,
+a.c-red:hover {
+	color: red
+}
+
+/*标准色—绿色*/
+.c-green,
+.c-green a,
+a.c-green {
+	color: green
+}
+
+.c-red a:hover,
+a.c-red:hover {
+	color: green
+}
+
+/*标准色—蓝色*/
+.c-blue,
+.c-blue a,
+a.c-blue {
+	color: #007aff
+}
+
+.c-blue a:hover,
+a.c-blue:hover {
+	color: #007aff
+}
+
+/*标准色—白色*/
+.c-white,
+.c-white a,
+a.c-white {
+	color: white
+}
+
+.c-white a:hover,
+a.c-white:hover {
+	color: white
+}
+
+/*标准色—黑色*/
+.c-black,
+.c-black a {
+	color: black
+}
+
+.c-black a:hover,
+a.c-black:hover {
+	color: black
+}
+
+/*标准色—橙色*/
+.c-orange,
+.c-orange a,
+a.c-orange {
+	color: orange
+}
+
+.c-orange a:hover,
+a.c-orange:hover {
+	color: orange
+}
+
+/* flex布局 */
+.flex-sb {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+/* 订单详情界面样式 */
+.detail-list-wrapper {
+	background: #EDEDED;
+	padding: 20upx;
+
+}
+
+.list-card {
+	background: #fff;
+	border-radius: 10upx;
+}
+
+.detail-list-item {
+	padding: 10upx;
+	border-bottom: 1px solid #D9D9D9;
+}
+
+.detail-list-label {
+	width: 200upx;
+	font-size: 32upx !important;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.detail-list-label::after {
+	content: '';
+	display: inline-block;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+.detail-list-input {
+	width: 570upx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.detail-list-wrapper .button-wrapper {
+	width: 720upx;
+}
+
+/* 列表标题 */
+.big-title {
+	font-size: 32upx;
+	color: #101010;
+	font-weight: 600;
+}
+
+.pt-title {
+	font-size: 30upx;
+	font-weight: 500;
+}
+
+.text-m {
+	font-size: 36rpx !important;
+}

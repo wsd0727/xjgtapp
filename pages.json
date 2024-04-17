@@ -1,0 +1,287 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tab05/login",
+			"style": {
+				"app-plus" : {
+				    "titleNView" : false
+				}
+			}
+		},
+		{
+			"path": "pages/tab03/index",
+			"style": {
+				"navigationBarTitleText": "发现"
+				// "app-plus" : {
+				//     "titleNView" : false
+				// }
+			}
+		},
+		{
+			"path": "pages/tab03/submit",
+			"style": {
+				"navigationBarTitleText": "业务"
+			}
+		},
+		{
+			"path": "pages/tab03/list",
+			"style": {
+				"navigationBarTitleText": "列表",
+				"enablePullDownRefresh": true,
+				"app-plus" : {
+				    "titleNView" : {
+				        "buttons" : [
+				            {
+											"text" : "\ue600",
+											"fontSrc" : "/static/nav.ttf",
+											"fontSize" : "22px",
+											"color" : "#fff",
+											"float":"right"
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/tab03/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/tab03/submit_main",
+			"style": {
+				"navigationBarTitleText": "提交"
+			}
+		},
+		{
+			"path": "pages/tab03/submit_main_ms",
+			"style": {
+				"navigationBarTitleText": "提交"
+			}
+		},
+		{
+			"path": "pages/tab03/report/condition",
+			"style": {
+				"navigationBarTitleText": "报表查询"
+			}
+		},
+		{
+			"path": "pages/tab03/report/chart",
+			"style": {
+				"navigationBarTitleText": "报表详情"
+			}
+		},
+		{
+			"path": "pages/tab03/report/list",
+			"style": {
+				"navigationBarTitleText": "报表列表",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/tab03/report/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		},
+		{
+			"path": "pages/tab03/order/index",
+			"style": {
+				"navigationBarTitleText": "订单"
+			}
+		},
+		{
+			"path": "pages/tab03/report/approval",
+			"style": {
+				"navigationBarTitleText": "订单审批流"
+			}
+		},
+		{
+			"path": "pages/tab01/index",
+			"style": {
+				"navigationBarTitleText": "派车业务",
+				"enablePullDownRefresh": true,
+				"app-plus" : {
+				    "titleNView" : {
+				        "buttons" : [
+				            {
+											"text" : " ",
+											"fontSrc" : "/static/nav.ttf",
+											"fontSize" : "22px",
+											"color" : "#fff",
+											"float":"left"
+				            }
+										/* {
+											"text" : "\ue62a",
+											"fontSrc" : "/static/nav.ttf",
+											"fontSize" : "22px",
+											"color" : "#fff",
+											"float":"right"
+										} */
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/tab01/send",
+			"style": {
+				"navigationBarTitleText": "派车"
+			}
+		},
+		{
+			"path": "pages/tab01/detail",
+			"style": {
+				"navigationBarTitleText": "采购派车"
+			}
+		},
+		{
+			"path": "pages/tab02/index",
+			"style": {
+				"navigationBarTitleText": "运单",
+				"enablePullDownRefresh": true,
+				"app-plus" : {
+				    "titleNView" : {
+				        "buttons" : [
+				            {
+											"text" : "\ue600",
+											"fontSrc" : "/static/nav.ttf",
+											"fontSize" : "22px",
+											"color" : "#fff",
+											"float":"left"
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/tab02/detail",
+			"style": {
+				"navigationBarTitleText": "运单详情"
+			}
+		},
+		{
+			"path": "pages/tab02/submit",
+			"style": {
+				"navigationBarTitleText": "运单编辑"
+			}
+		},
+		{
+			"path": "pages/tab05/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		
+		{
+			"path": "pages/tab05/admin",
+			"style": {
+				"navigationBarTitleText": "账户信息"
+			}
+		},
+		{
+			"path": "pages/tab05/help",
+			"style": {
+				"navigationBarTitleText": "帮助中心"
+			}
+		},
+		{
+			"path": "pages/tab05/change-pwd",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		},
+		
+		{
+			"path": "pages/tab05/about",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		},
+		{
+			"path": "pages/public/search",
+			"style": {
+				"navigationBarTitleText": "查询",
+				"app-plus" : {
+				    "titleNView" : {
+				        "buttons": [{
+				        	"text": "\ue65b",
+				        	"fontSrc": "/static/nav.ttf",
+				        	"fontSize": "22px",
+				        	"color": "#fff",
+				        	"float": "right"
+				        }]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/tab05/network02",
+			"style": {
+				"navigationBarTitleText": "网络配置",
+				"app-plus" : {
+				    "titleNView" : {
+				        "buttons" : [
+				            {
+								"text" : "\ue409",
+								"fontSrc" : "/static/uni.ttf",
+								"fontSize" : "30px",
+								"color" : "#fff"
+				            }
+				        ]
+				    }
+				}
+			}
+		},
+		{
+			"path": "pages/tab05/register",
+			"style": {
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"navigationBarTitleText": "用户注册",
+				"navigationBarTextStyle": "black"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "Hello uniapp",
+		"navigationBarBackgroundColor": "#0164FF",
+		"backgroundColor": "#0164FF"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#0164FF",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"fontSize":"20px",
+		"list": [
+			{
+				"pagePath": "pages/tab01/index",
+				"iconPath": "static/tab/tab02.png",
+				"selectedIconPath": "static/tab/tab02-h.png",
+				"text": "派车"
+			},
+			{
+				"pagePath": "pages/tab02/index",
+				"iconPath": "static/tab/tab03.png",
+				"selectedIconPath": "static/tab/tab03-h.png",
+				"text": "运单"
+			},
+			{
+					"pagePath": "pages/tab03/index",
+					"iconPath": "static/tab/tab01.png",
+					"selectedIconPath": "static/tab/tab01-h.png",
+					"text": "发现"
+			},
+			{
+				"pagePath": "pages/tab05/index",
+				"iconPath": "static/tab/tab05.png",
+				"selectedIconPath": "static/tab/tab05-h.png",
+				"text": "我的"
+			}
+		]
+	}
+}
