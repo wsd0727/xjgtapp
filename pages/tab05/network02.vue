@@ -35,7 +35,7 @@
 			name: "远大联通",
 			ip: "42.48.136.54:8820",
 			isadd: false
-		}
+		},
 	];
 	
 	// var GDIPdata = [

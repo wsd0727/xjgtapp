@@ -635,6 +635,7 @@
 				}
 				// console.log(result);
 				// 苹果版本 获取权限判断 
+			
 				isIos ? _self.judgeIosPermission('location', dataItem) : _self.requestAndroidPermission(
 					'android.permission.ACCESS_FINE_LOCATION', dataItem)
 
@@ -707,6 +708,16 @@
 						pageList[_self.TabCur] = 1;
 						totalList[_self.TabCur] = 1;
 						_self.getNewsList();
+						
+						console.log('前往公告页');
+						_self.uniSkip.navigateTo({
+							url: 'notice?baseUrl=' + baseUrl,
+							data: {
+								url: baseUrl,
+								myToken: token,
+							}
+						})
+						
 					})
 					.catch(d => {
 						_self.idDisabled01 = false

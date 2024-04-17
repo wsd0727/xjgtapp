@@ -243,7 +243,14 @@
 				"navigationBarTitleText": "用户注册",
 				"navigationBarTextStyle": "black"
 			}
+		},
+		{
+			"path": "pages/tab02/notice",
+			"style": {
+				"navigationBarTitleText": "入场公告"
+			}
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
