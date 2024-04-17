@@ -1,8 +1,7 @@
 <template>
 	<view id="register">
 		<view class="headers">
-			<text class="headtitle">快捷注册</text>
-			<text class="headtips">用户可通过手机号码直接注册</text>
+			<text class="headtitle">忘记密码</text>
 		</view>
 		<view class="register_info">
 			<ul>
@@ -17,7 +16,7 @@
 					<input type="text" v-model="Form.IDCard" maxlength="18" placeholder="请输入身份证号码" />
 				</li>
 				<li class="uni-flex">
-					<input type="text" v-model="Form.Password" placeholder="请输入密码" />
+					<input type="text" v-model="Form.Password" placeholder="请输入新密码" />
 				</li>
 
 			</ul>
@@ -78,10 +77,8 @@
 
 				this.isSubmit = true;
 				// console.log(HOST + '/BA_User/RegisterAccount');
-				// console.log(HOST);
-				// console.log(_self.Form);
 				uni.request({
-					url: HOST + '/api/DRIVERPASSWORD/PhoneRegister',
+					url: HOST + '/api/DRIVERPASSWORD/ResetPasswordData',
 					method: "POST",
 					data: {
 						Secretkey: HOST,
@@ -92,9 +89,9 @@
 						console.log(res);
 						_self.isSubmit = false;
 						if (!res.data.IsSuccess || res.statusCode != 200) {
-							return this.$utils.tips(`注册失败：${res.data.Message}`);
+							return this.$utils.tips(`修改失败：${res.data.Message}`);
 						}
-						this.$utils.tips(`注册成功`);
+						this.$utils.tips(`修改成功`);
 						setTimeout(() => {
 							uni.navigateBack()
 						}, 1000)

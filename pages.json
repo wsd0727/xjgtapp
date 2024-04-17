@@ -249,6 +249,14 @@
 			"style": {
 				"navigationBarTitleText": "入场公告"
 			}
+		},
+		{
+			"path" : "pages/tab05/forgetPassword",
+			"style" : 
+			{
+				"navigationBarTitleText" : "忘记密码",
+				"enablePullDownRefresh" : false
+			}
 		}
 		
 	],

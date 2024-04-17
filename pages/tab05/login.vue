@@ -39,7 +39,9 @@
 						<view class="" style="padding: 10px 15px 10px 0;" @click="register" v-else>
 							新户注册
 						</view>
-
+						<view class="" style="padding: 10px 15px 10px 0;" @click="forgetPassword">
+							忘记密码
+						</view>
 						<view class="" style="padding: 10px 0px 10px 15px;" @click="openViews">
 							网络配置
 						</view>
@@ -156,6 +158,24 @@
 		},
 		methods: {
 			...mapMutations(['setSOBinfoReduce', 'setIsSOBReduce']),
+			
+			forgetPassword(){
+				let base = 'http://' + _self.serverList[_self.activeIndex].ip;
+				// console.log(_self.serverList[_self.activeIndex].ip);
+				if (!base) {
+					this.$utils.tips('请检查网络配置和服务器地址')
+					return setTimeout(() => {
+						uni.navigateTo({
+							url: 'network02'
+						});
+					}, 500)
+				}
+				uni.navigateTo({
+					url: 'forgetPassword?baseURL=' + base
+				});
+				
+				
+			},
 
 			register() {
 				let base = 'http://' + _self.serverList[_self.activeIndex].ip;
@@ -172,8 +192,6 @@
 				uni.navigateTo({
 					url: 'register?baseURL=' + base
 				});
-
-
 			},
 
 			// 极光推送获取设备RegisterID 
