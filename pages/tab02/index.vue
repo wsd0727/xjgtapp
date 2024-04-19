@@ -46,6 +46,9 @@
 					<view class="">
 						<button class="cu-btn round lines-blue" @click.stop="openDetail(item,1)">{{ '详情' }}</button>
 					</view>
+					<view class="">
+						<button class="cu-btn round lines-blue" @click.stop="railwayImg(item)">厂内路线图</button>
+					</view>
 				</view>
 
 			</view>
@@ -192,6 +195,18 @@
 			this.getNewsList();
 		},
 		methods: {
+			railwayImg(item){
+				console.log(item);
+				return
+				this.uniSkip.navigateTo({
+					url: 'railwayImg',
+					data: {
+						baseUrl: baseUrl,
+						myToken: token,
+						PK_MATERIAL:1
+					}
+				})
+			},
 			showModal(e) {
 				// console.log(initQueryJson);
 				this.$refs.queryDrawer.showDrawer('showLeft')
@@ -369,6 +384,7 @@
 					success: function(res) {
 						let cfgObg = JSON.parse(res.data).waybillCFG;
 						let tabLeb = cfgObg.length;
+						console.log(cfgObg);
 						_self.tabList = cfgObg;
 						_self.paddingTop = _self.tabList.length != 1 ? '45px' : '0';
 						// console.log(cfgObg);
@@ -510,6 +526,7 @@
 				queryParams.StartTime = queryParams.StartTime.indexOf(' ') < 0 ? queryParams.StartTime + ' 00:00:00' : queryParams.StartTime,
 					queryParams.EndTime = queryParams.EndTime.indexOf(' ') < 0 ? queryParams.EndTime + ' 23:59:59' : queryParams.EndTime
 				// console.log(baseUrl + queryUrl[i]);
+				console.log(queryUrl[i]);
 				console.log(queryParams);
 				_self.$axios({
 						url: baseUrl + queryUrl[i],

@@ -70,6 +70,7 @@
 				})
 			},
 			handleEvent(i){
+				console.log(_self.homecfg[i].SHOWTYPE);
 				let paths = 'list' ;
 				if(_self.homecfg[i].SHOWTYPE == 2 ){
 					paths = 'submit';
@@ -79,7 +80,12 @@
 					paths = './order/index'; // 订单新增
 				}else if(_self.homecfg[i].SHOWTYPE == 'D'){
 					paths = 'list?isMS=true'; // 进主子表结构
+				}else if(_self.homecfg[i].SHOWTYPE == 'Q'){
+					paths = 'CarInQueue'; // 排队列表
+				}else if(_self.homecfg[i].SHOWTYPE == 'S'){
+					paths = 'CarInQueueStats'; // 排队状态
 				}
+				
 				// console.log(_self.homecfg[i].SHOWTYPE);
 				console.log(paths);
 				_self.uniSkip.navigateTo({
