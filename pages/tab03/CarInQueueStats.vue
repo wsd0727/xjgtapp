@@ -2,7 +2,7 @@
 	<view>
 		<view class="queueList content">
 			<view class="">
-				<view class="queueList-backImg">
+				<!-- <view class="queueList-backImg">
 					<view class="queueList-smallTitle" v-if="objData.OrderCount">当前序号</view>
 					<view class="queueList-queueNo" v-if="objData.OrderCount">{{objData.OrderCount}}</view>
 					<view class="queueList-statusText">{{objData.ORDERSTATUSNAME}}</view>
@@ -28,6 +28,48 @@
 					<view class="queueList-time">签到时间：{{objData.ORDERTIME}}</view>
 					<view class="queueList-time">叫号时间：{{objData.CALLTIME}}</view>
 
+				</view> -->
+				<view class="content-item">
+					<!-- <view class="queueList-CARNAME">{{item.CARNAME}}</view> -->
+					<!-- <view class="disflex justify-sb" v-if="isTSLY"> -->
+					<view class="disflex justify-sb mb-20">
+
+						<view class="disflex">
+							<view class="queueList-num">{{objData.VINDEX}}</view>
+							<view class="queueList-carNo">{{objData.CARSNAME}}</view>
+						</view>
+						<view class="queueList-status">
+							{{objData.ORDERSTATUSNAME}}
+						</view>
+					</view>
+					<view class="disflex justify-sb">
+						<view>
+							<view class="disflex mb-10">
+								<view class="queueList-label">当前序号：</view>
+								<view class="queueList-value">{{objData.OrderCount}}</view>
+							</view>
+							<view class="disflex mb-10">
+								<view class="queueList-label">当前排队车辆数：</view>
+								<view class="queueList-value">{{objData.TotalCount}}</view>
+							</view>
+							<view class="disflex mb-10">
+								<view class="queueList-label">物料：</view>
+								<view class="queueList-value">{{objData.MATERIALNAME}}</view>
+							</view>
+							<view class="disflex">
+								<view class="queueList-label">物料规格：</view>
+								<view class="queueList-value">{{objData.MATSPEC}}</view>
+							</view>
+							<view class="disflex">
+								<view class="queueList-label">叫号次数：</view>
+								<view class="queueList-value">{{objData.VCOUNT}}</view>
+							</view>
+						</view>
+						<view>
+						</view>
+					</view>
+					<view class="queueList-time">签到时间：{{objData.ORDERTIME}}</view>
+					<view class="queueList-time" v-if="objData.CALLTIME">叫号时间：{{objData.CALLTIME}}</view>
 				</view>
 			</view>
 
@@ -67,13 +109,15 @@
 		},
 		methods: {
 			getNewsList() {
+				console.log(_self.Phone);
 				setTimeout(function() {
 					uni.hideLoading();
 				}, 5000);
 				_self.$axios({
-						url: baseUrl + 'api/ParkQueue/CarInQueueStats',
+						url: baseUrl + '/api/ParkQueue/CarInQueueStats',
 						data: {
-							Phone: '15741390448'
+							Phone:_self.Phone,
+
 						},
 						// token: token,
 						isLoading: true
@@ -143,119 +187,191 @@
 		}
 	}
 
-	.queueList {
+	// .queueList {
 
+	// 	font-size: 24rpx;
+	// 	font-weight: 400;
+	// 	color: #535353;
+
+	// 	background-color: #EBEBEB;
+	// 	min-height: calc(100vh - 90rpx);
+
+	// 	padding-top: 20rpx;
+
+	// 	&-backImg {
+	// 		// background: url("/static/list/queueInfo.png") no-repeat center center;
+	// 		background: url("/static/list/queueInfo.png") no-repeat center center;
+	// 		background-size: cover;
+
+	// 		padding: 50rpx 20rpx 20rpx 20rpx;
+	// 	}
+
+	// 	&-smallTitle {
+	// 		font-size: 28rpx;
+	// 		font-weight: 500;
+	// 		color: #191919;
+	// 		text-align: center;
+	// 		margin-bottom: 20rpx;
+	// 	}
+
+	// 	&-queueNo {
+	// 		font-size: 48rpx;
+	// 		font-weight: bold;
+	// 		color: #131313;
+	// 		text-align: center;
+	// 		margin-bottom: 50rpx;
+	// 	}
+
+	// 	&-statusImg {
+	// 		width: 41rpx;
+	// 	}
+
+	// 	&-statusText {
+	// 		font-size: 22rpx;
+	// 		font-weight: 500;
+	// 		color: #161616;
+	// 		margin-top: 20rpx;
+
+	// 		// &.active {
+	// 		// 	color: #161616;
+	// 		// }
+	// 	}
+
+	// 	&-rowLine {
+	// 		width: 100rpx;
+	// 		height: 2rpx;
+	// 		border-top: 1rpx dashed #c0c0c0;
+	// 	}
+
+	// 	&-ranking {
+
+	// 		background: #F0F0F0;
+	// 		border-radius: 28rpx;
+	// 		padding: 12rpx 40rpx;
+	// 		max-width: 200rpx;
+	// 		margin: 50rpx auto;
+	// 	}
+
+	// 	&-rank {
+	// 		font-size: 24rpx;
+	// 		font-weight: 400;
+	// 		color: #7B7B7B;
+	// 		text-align: center;
+	// 		margin-bottom: 100rpx;
+	// 		margin-top: 100rpx;
+	// 	}
+
+
+	// 	// &-CARNAME {
+	// 	// 	// font-size: 23rpx;
+	// 	// 	// font-weight: bold;
+	// 	// 	// color: #2C76FF;
+	// 	// 	margin-bottom: 20rpx;
+	// 	// 	font-size: 26rpx;
+	// 	// 	font-weight: bold;
+	// 	// 	color: #131313;
+
+	// 	// }
+
+	// 	// &-status {
+	// 	// 	font-size: 28rpx;
+	// 	// 	font-weight: bold;
+	// 	// 	// color: #2C76FF;
+	// 	// }
+
+	// 	// &-num {
+	// 	// 	width: 27rpx;
+	// 	// 	height: 27rpx;
+	// 	// 	background: #297BFC;
+	// 	// 	border-radius: 4rpx;
+	// 	// 	font-size: 22rpx;
+	// 	// 	font-weight: 500;
+	// 	// 	color: #FFFFFF;
+	// 	// 	text-align: center;
+	// 	// 	line-height: 27rpx;
+	// 	// 	margin-right: 10rpx;
+	// 	// }
+
+
+	// 	// &-carNo {
+	// 	// 	font-size: 28rpx;
+	// 	// 	font-weight: bold;
+	// 	// 	color: #131313;
+
+
+	// 	// }
+
+
+	// 	&-label {
+	// 		color: #636363;
+	// 		font-size: 26rpx;
+	// 		width: 140rpx;
+	// 	}
+
+	// 	&-value {
+	// 		color: #191919;
+	// 		font-size: 26rpx;
+	// 	}
+
+	// 	&-time {
+	// 		border-top: 1rpx solid #CFCFCF;
+	// 		// padding-top: 20rpx;
+	// 		padding: 20rpx;
+	// 		// margin-top: 20rpx;
+	// 		margin: 20rpx;
+
+	// 	}
+
+
+
+	// }
+	.queueList {
+		// background-color: #fff;
+		padding: 20rpx;
 		font-size: 24rpx;
 		font-weight: 400;
 		color: #535353;
 
-		background-color: #EBEBEB;
-		min-height: calc(100vh - 90rpx);
 
-		padding-top: 20rpx;
 
-		&-backImg {
-			// background: url("/static/list/queueInfo.png") no-repeat center center;
-			// background: url("/static/list/queueInfo.png") no-repeat center center;
-			background-size: cover;
-
-			padding: 50rpx 20rpx 20rpx 20rpx;
-		}
-
-		&-smallTitle {
-			font-size: 28rpx;
-			font-weight: 500;
-			color: #191919;
-			text-align: center;
+		&-CARNAME {
+			// font-size: 23rpx;
+			// font-weight: bold;
+			// color: #2C76FF;
 			margin-bottom: 20rpx;
-		}
-
-		&-queueNo {
-			font-size: 48rpx;
+			font-size: 26rpx;
 			font-weight: bold;
 			color: #131313;
-			text-align: center;
-			margin-bottom: 50rpx;
+
 		}
 
-		&-statusImg {
-			width: 41rpx;
+		&-status {
+			font-size: 28rpx;
+			font-weight: bold;
+			// color: #2C76FF;
 		}
 
-		&-statusText {
+		&-num {
+			width: 27rpx;
+			height: 27rpx;
+			background: #297BFC;
+			border-radius: 4rpx;
 			font-size: 22rpx;
 			font-weight: 500;
-			color: #C0C0C0;
-			margin-top: 20rpx;
-
-			&.active {
-				color: #161616;
-			}
-		}
-
-		&-rowLine {
-			width: 100rpx;
-			height: 2rpx;
-			border-top: 1rpx dashed #c0c0c0;
-		}
-
-		&-ranking {
-
-			background: #F0F0F0;
-			border-radius: 28rpx;
-			padding: 12rpx 40rpx;
-			max-width: 200rpx;
-			margin: 50rpx auto;
-		}
-
-		&-rank {
-			font-size: 24rpx;
-			font-weight: 400;
-			color: #7B7B7B;
+			color: #FFFFFF;
 			text-align: center;
-			margin-bottom: 100rpx;
-			margin-top: 100rpx;
+			line-height: 27rpx;
+			margin-right: 10rpx;
 		}
 
 
-		// &-CARNAME {
-		// 	// font-size: 23rpx;
-		// 	// font-weight: bold;
-		// 	// color: #2C76FF;
-		// 	margin-bottom: 20rpx;
-		// 	font-size: 26rpx;
-		// 	font-weight: bold;
-		// 	color: #131313;
-
-		// }
-
-		// &-status {
-		// 	font-size: 28rpx;
-		// 	font-weight: bold;
-		// 	// color: #2C76FF;
-		// }
-
-		// &-num {
-		// 	width: 27rpx;
-		// 	height: 27rpx;
-		// 	background: #297BFC;
-		// 	border-radius: 4rpx;
-		// 	font-size: 22rpx;
-		// 	font-weight: 500;
-		// 	color: #FFFFFF;
-		// 	text-align: center;
-		// 	line-height: 27rpx;
-		// 	margin-right: 10rpx;
-		// }
+		&-carNo {
+			font-size: 28rpx;
+			font-weight: bold;
+			color: #131313;
 
 
-		// &-carNo {
-		// 	font-size: 28rpx;
-		// 	font-weight: bold;
-		// 	color: #131313;
-
-
-		// }
+		}
 
 
 		&-label {
@@ -271,13 +387,13 @@
 
 		&-time {
 			border-top: 1rpx solid #CFCFCF;
-			// padding-top: 20rpx;
-			padding: 20rpx;
-			// margin-top: 20rpx;
-			margin: 20rpx;
-
+			padding-top: 20rpx;
+			margin-top: 20rpx;
 		}
 
+		&-statusImg {
+			width: 56rpx;
+		}
 
 
 	}
