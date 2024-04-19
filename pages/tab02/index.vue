@@ -197,14 +197,13 @@
 		methods: {
 			railwayImg(item){
 				console.log(item);
-				return
-				this.uniSkip.navigateTo({
-					url: 'railwayImg',
-					data: {
-						baseUrl: baseUrl,
-						myToken: token,
-						PK_MATERIAL:1
-					}
+				_self.uniSkip.navigateTo({
+					url: 'railwayImg?baseUrl=' + baseUrl + '&PK_MATERIAL=' + item.PK_MATERIAL+'&myToken=' +token
+					// data: {
+					// 	baseUrl: baseUrl,
+					// 	myToken: token,
+					// 	PK_MATERIAL:item.PK_MATERIAL
+					// }
 				})
 			},
 			showModal(e) {
@@ -526,11 +525,21 @@
 				queryParams.StartTime = queryParams.StartTime.indexOf(' ') < 0 ? queryParams.StartTime + ' 00:00:00' : queryParams.StartTime,
 					queryParams.EndTime = queryParams.EndTime.indexOf(' ') < 0 ? queryParams.EndTime + ' 23:59:59' : queryParams.EndTime
 				// console.log(baseUrl + queryUrl[i]);
-				console.log(queryUrl[i]);
-				console.log(queryParams);
+				// console.log(queryUrl[i]);
+				// console.log(queryParams);
+				
+				// const testPortData =  {
+				// 		"PageInfo": {
+				// 			"page": 1,
+				// 			"rows": 10,
+				// 			"sidx": "CREATIONTIME",
+				// 			"sord": "desc"
+				// 		}
+				// 	}
 				_self.$axios({
 						url: baseUrl + queryUrl[i],
 						data: queryParams,
+						// data:testPortData,
 						token: token
 					})
 					.then(res => {
