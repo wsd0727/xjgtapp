@@ -33,10 +33,10 @@
 					<button hover-class="e-hover-btn" formType="submit" class="login-btn">登录</button>
 					<view class="uni-flex e-flex-bwt">
 
-						<view class="" style="padding: 10px 15px 10px 0;" @click="clearStorages" v-if="!system">
+					<!-- 	<view class="" style="padding: 10px 15px 10px 0;" @click="clearStorages" v-if="!system">
 							清除缓存
-						</view>
-						<view class="" style="padding: 10px 15px 10px 0;" @click="register" v-else>
+						</view> -->
+						<view class="" style="padding: 10px 15px 10px 0;" @click="register">
 							新户注册
 						</view>
 						<view class="" style="padding: 10px 15px 10px 0;" @click="forgetPassword">
