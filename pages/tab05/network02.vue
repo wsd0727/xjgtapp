@@ -26,16 +26,17 @@
 
 <script>
 	let that;
-	let GDIPdata = [{
-			name: "远大电信",
-			ip: "218.76.167.111:8810",
-			isadd: false
-		},
-		{
-			name: "远大联通",
-			ip: "42.48.136.54:8820",
-			isadd: false
-		},
+	let GDIPdata = [
+		// {
+		// 	name: "远大电信",
+		// 	ip: "218.76.167.111:8810",
+		// 	isadd: false
+		// },
+		// {
+		// 	name: "远大联通",
+		// 	ip: "42.48.136.54:8820",
+		// 	isadd: false
+		// },
 	];
 	
 	// var GDIPdata = [
