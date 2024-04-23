@@ -15,7 +15,11 @@
             "delay" : 0
         },
         /* 模块配置 */
-        "modules" : {},
+        "modules" : {
+            "Maps" : {},
+            "Geolocation" : {},
+            "Camera" : {}
+        },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
@@ -67,7 +71,25 @@
             "sdkConfigs" : {
                 "speech" : {},
                 "ad" : {},
-                "push" : {}
+                "push" : {},
+                "geolocation" : {
+                    "system" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "amap" : {
+                        "name" : "amap_17636607203CI1kfm2in",
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "278830d2364d35b9d7d4d3c1ebbebf0a",
+                        "appkey_android" : "278830d2364d35b9d7d4d3c1ebbebf0a"
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "name" : "amap_17636607203CI1kfm2in",
+                        "appkey_ios" : "278830d2364d35b9d7d4d3c1ebbebf0a",
+                        "appkey_android" : "278830d2364d35b9d7d4d3c1ebbebf0a"
+                    }
+                }
             },
             "icons" : {
                 "android" : {
