@@ -244,6 +244,7 @@
 					_formValue[item.FIELDNAME] = tipText;
 					
 					if(item.FIELDNAME=='StartTime'){
+						// console.log(item);
 						if(item.DEFAULTVALUE && item.DEFAULTVALUE.includes('D')){
 							let dayNum = item.DEFAULTVALUE.replace('D','')
 							_formValue.StartTime= utils.GetDateAfter(dayNum) //  '2000-01-01'
@@ -280,7 +281,7 @@
 
 				initQueryJson = JSON.parse(JSON.stringify(_formValue));
 				_self.queryJson = JSON.parse(JSON.stringify(initQueryJson));
-				this.resetStartTime()
+				// this.resetStartTime()
 				queryParams = { ...queryParams,
 					...initQueryJson
 				};
@@ -519,23 +520,12 @@
 				setTimeout(function() {
 					uni.hideLoading();
 				}, 50000);
-				// queryUrl =  _self.tabList[_self.TabCur].CHILDRENS[0].INTERFACEURL
 				queryParams.userId = userId;
 				queryParams.PageInfo.page = pageList[i]
 				queryParams.StartTime = queryParams.StartTime.indexOf(' ') < 0 ? queryParams.StartTime + ' 00:00:00' : queryParams.StartTime,
 					queryParams.EndTime = queryParams.EndTime.indexOf(' ') < 0 ? queryParams.EndTime + ' 23:59:59' : queryParams.EndTime
-				// console.log(baseUrl + queryUrl[i]);
-				// console.log(queryUrl[i]);
-				// console.log(queryParams);
 				
-				// const testPortData =  {
-				// 		"PageInfo": {
-				// 			"page": 1,
-				// 			"rows": 10,
-				// 			"sidx": "CREATIONTIME",
-				// 			"sord": "desc"
-				// 		}
-				// 	}
+				console.log(queryParams);
 				_self.$axios({
 						url: baseUrl + queryUrl[i],
 						data: queryParams,

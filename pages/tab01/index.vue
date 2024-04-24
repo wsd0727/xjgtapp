@@ -305,7 +305,7 @@
 				})
 				initQueryJson = JSON.parse(JSON.stringify(_formValue));
 				_self.queryJson = JSON.parse(JSON.stringify(initQueryJson)) ;
-				this.resetStartTime()
+				// this.resetStartTime()
 				queryParams = { ...queryParams,
 					...initQueryJson
 				};
