@@ -10,8 +10,7 @@
 						<view class="queueList-num">{{item.VINDEX}}</view>
 						<view class="queueList-carNo">{{item.CARSNAME}}</view>
 					</view>
-					<view class="queueList-status"
-						>
+					<view class="queueList-status">
 						{{item.ORDERSTATUSNAME}}
 					</view>
 				</view>
@@ -65,21 +64,26 @@
 		data() {
 			return {
 				planList: [],
-				Phone:''
+				Phone: ''
 			}
 		},
 		onLoad(params) {
+			console.log(params);
 			_self = this
 			userId = params.userId;
 			baseUrl = params.baseUrl;
-			uni.getStorage({
-				key: 'userInfo',
-				success: function(res) {
-					const userData = JSON.parse(res.data)
-					_self.Phone = userData.Mobile || '';
-					_self.getNewsList()
-				}
-			});
+			_self.uniSkip.getParams(function(data) {
+				token = data.token
+				uni.getStorage({
+					key: 'userInfo',
+					success: function(res) {
+						const userData = JSON.parse(res.data)
+						_self.Phone = userData.Mobile || '';
+						_self.getNewsList()
+					}
+				});
+			})
+
 		},
 		methods: {
 			getNewsList() {
@@ -104,7 +108,7 @@
 						data: {
 							Phone: _self.Phone
 						},
-						// token: token,
+						token: token,
 						isLoading: true
 					})
 					.then(res => {
@@ -135,28 +139,34 @@
 	.p-10 {
 		padding: 10rpx 0;
 	}
-	.disflex{
+
+	.disflex {
 		display: flex;
 		align-items: center;
 	}
-	.justify-sb{
+
+	.justify-sb {
 		justify-content: space-between;
 	}
-	.mb-10{
+
+	.mb-10 {
 		margin-bottom: 10rpx;
 	}
-	.mb-20{
+
+	.mb-20 {
 		margin-bottom: 20rpx;
 	}
-	
-	.content{
+
+	.content {
 		padding: 0 16rpx;
-		&-item{
+
+		&-item {
 			background-color: #fff;
 			margin-bottom: 10rpx;
 			border-radius: 12rpx;
-			padding:24rpx 30rpx;
-			&-row{
+			padding: 24rpx 30rpx;
+
+			&-row {
 				display: flex;
 				align-items: center;
 				margin-bottom: 10rpx;

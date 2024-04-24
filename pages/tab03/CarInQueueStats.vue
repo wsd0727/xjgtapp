@@ -98,14 +98,18 @@
 			_self = this
 			userId = params.userId;
 			baseUrl = params.baseUrl;
-			uni.getStorage({
-				key: 'userInfo',
-				success: function(res) {
-					const userData = JSON.parse(res.data)
-					_self.Phone = userData.Mobile || '';
-					_self.getNewsList()
-				}
-			});
+
+			_self.uniSkip.getParams(function(data) {
+				token = data.token
+				uni.getStorage({
+					key: 'userInfo',
+					success: function(res) {
+						const userData = JSON.parse(res.data)
+						_self.Phone = userData.Mobile || '';
+						_self.getNewsList()
+					}
+				});
+			})
 		},
 		methods: {
 			getNewsList() {
@@ -116,10 +120,10 @@
 				_self.$axios({
 						url: baseUrl + '/api/ParkQueue/CarInQueueStats',
 						data: {
-							Phone:_self.Phone,
+							Phone: _self.Phone,
 
 						},
-						// token: token,
+						token: token,
 						isLoading: true
 					})
 					.then(res => {
